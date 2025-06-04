@@ -1,0 +1,33 @@
+- name: app-setup
+  include_role:
+    name: common 
+    tasks_from: app-setup
+
+- name: maven-setup
+  include_role:
+    name: common
+    tasks_from: maven-setup
+
+- name: systemd-setup
+  include_role:
+    name: common
+    tasks_from: systemd
+
+
+- name: Loading the data 
+  community.mysql.mysql_db:
+    name: all
+    state: import
+    login_user: "{{ MYSQL_ROOT_USER }}"
+    login_password: "{{ MYSQL_ROOT_PASSWORD }}"
+    login_host: "{{ MYSQL_HOST }}"
+    target: "{{ item }}"
+  loop: 
+  - /app/db/schema.sql
+  - /app/db/app-user.sql
+  - /app/db/master-data.sql
+
+- name: "restarting the {{ component }} Component"
+  ansible.builtin.service:
+    name: "{{ component }}"
+    state: restarted

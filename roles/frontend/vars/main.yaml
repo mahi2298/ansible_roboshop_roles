@@ -1,1 +1,5 @@
 CATALOGUE_HOST: catalogue.pavithra.fun
+USER_HOST: user.pavithra.fun
+CART_HOST: cart.pavithra.fun
+SHIPPING_HOST: shipping.pavithra.fun
+PAYMENT_HOST: payment.pavithra.fun

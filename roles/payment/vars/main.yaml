@@ -1,0 +1,5 @@
+CART_HOST: cart.pavithra.fun
+USER_HOST: user.pavithra.fun
+RABBITMQ_HOST: rabbitmq.pavithra.fun
+RABBITMQ_USER: roboshop
+RABBITMQ_PASSWORD: roboshop123
