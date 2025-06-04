@@ -1,2 +1,2 @@
-REDIS_HOST: redis.pavithra.fun
 MONGODB_HOST: mongodb.pavithra.fun
+REDIS_HOST: redis.pavithra.fun
