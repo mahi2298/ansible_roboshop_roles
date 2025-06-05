@@ -9,6 +9,8 @@
     tasks_from: nodejs
 
 - name: systemd set-up
+  tags:
+  - deployment 
   include_role:
     name: common
     tasks_from: systemd
@@ -19,6 +21,8 @@
     dest: /etc/yum.repos.d/mongo.repo
 
 - name: install the mongodb client
+  tags:
+  - deployment 
   ansible.builtin.dnf:
     name: mongodb-mongosh
     state: present
