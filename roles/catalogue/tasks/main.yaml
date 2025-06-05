@@ -40,6 +40,6 @@
 
 
 - name: Deployment
-  include_role: # it is applicable only to this specific statement
+  import_role: # it is applicable only to this specific statement
     name: common
     tasks_from: deployment
