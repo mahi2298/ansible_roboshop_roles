@@ -34,3 +34,11 @@
 - name: load products 
   ansible.builtin.shell: mongosh --host mongodb.pavithra.fun < /app/db/master-data.js
   when: catalogue_output.stdout | int < 0
+
+
+- name: Deployment
+  tags:
+  - deployment 
+  include_role: # it is applicable only to this specific statement
+    name: common
+    tasks_from: deployment

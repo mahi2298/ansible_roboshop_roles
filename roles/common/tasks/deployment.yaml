@@ -1,0 +1,29 @@
+- name: Stop the catalogue
+  ansible.builtins.service:
+    name: {{ component }}
+    state: absent
+
+- name: Remove /app directory
+  ansible.builtin.file:
+    path: /app
+    state: absent
+
+- name: create the /app directory
+  ansible.builtin.file:
+    path: /app
+    state: directory
+
+- name: download application
+  ansible.builtin/unarchive:
+    url: "https://roboshop-artifacts.s3.amazonaws.com/{{ component }}-v{{ app_version }}.zip"
+    dest: /app
+    remote_src: yes
+
+- name: install dependencies
+  community.general.npm:
+    path: /app
+
+- name: restart {{ component }}
+  ansible.builtin.service:
+    name: "{{ component }}"
+    state: restarted
