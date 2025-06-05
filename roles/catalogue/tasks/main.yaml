@@ -22,7 +22,7 @@
 
 - name: install the mongodb client
   tags:
-  - deployment 
+    - deployment 
   ansible.builtin.dnf:
     name: mongodb-mongosh
     state: present
