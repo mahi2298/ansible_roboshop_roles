@@ -6,8 +6,6 @@
     state: stopped
 
 - name: Remove /app directory
-  tags:
-  - deployment
   ansible.builtin.file:
     path: /app
     state: absent
