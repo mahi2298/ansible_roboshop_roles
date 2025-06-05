@@ -1,6 +1,6 @@
 - name: Stop the catalogue
-  ansible.builtins.service:
-    name: {{ component }}
+  ansible.builtin.service:
+    name: "{{ component }}"
     state: absent
 
 - name: Remove /app directory
