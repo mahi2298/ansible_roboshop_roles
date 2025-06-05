@@ -1,6 +1,4 @@
 - name: Stop the catalogue
-  tags:
-  - deployment
   ansible.builtin.service:
     name: "{{ component }}"
     state: stopped

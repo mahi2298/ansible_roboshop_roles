@@ -44,8 +44,6 @@
 
 
 - name: Deployment
-  tags:
-  - deployment 
   include_role: # it is applicable only to this specific statement
     name: common
     tasks_from: deployment
