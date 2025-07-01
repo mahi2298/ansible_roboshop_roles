@@ -4,13 +4,13 @@
     state: installed
 
 #here we need to install boto3 and botocore at ansible server level not at sql server
-# - name: install boto3 and botocore
-#   ansible.builtin.pip:
-#     name: "{{ item }}"
-#     executable: pip3.9
-#   loop:
-#   - boto3
-#   - botocore
+- name: install boto3 and botocore
+  ansible.builtin.pip:
+    name: "{{ item }}"
+    executable: pip3.9
+  loop:
+  - boto3
+  - botocore
 
 - name: enabling and starting the mysql server
   ansible.builtin.service:
